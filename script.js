@@ -26,3 +26,11 @@ function getComputerChoice() {
             computerChoice = "scissors";
     }
 }
+
+// Declare the variable globally in order to avoid errors
+let playerChoice;
+
+do {
+    playerChoice = prompt("Choose rock, paper, or scissors").toLowerCase();
+}
+while(playerChoice != "rock" && playerChoice != "paper" && playerChoice != "scissors");
