@@ -2,9 +2,6 @@
 Rock paper scissors script
 */
 
-// Make global variable for computer choice
-let computerChoice;
-
 /*
 Random number between 0 and 2 inclusive
 0 - "rock"
@@ -15,19 +12,17 @@ function getComputerChoice() {
     let rand = Math.floor(Math.random() * 3);
     switch (rand) {
         case 0:
-            computerChoice = "rock";
-            break;
+            return "rock";
 
         case 1:
-            computerChoice = "paper";
-            break;
+            return "paper";
 
         default:
-            computerChoice = "scissors";
+            return "scissors";
     }
 }
 
-getComputerChoice();
+let computerChoice = getComputerChoice();
 
 // Declare the variable globally in order to avoid errors
 let playerChoice;
