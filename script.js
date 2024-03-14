@@ -68,6 +68,11 @@ function playRound(computerChoice, playerChoice) {
     }
 }
 
+/*
+Use a for loop that repeats 5 times in order to play 5 rounds
+At the end, figure out who won the most rounds and print the winner
+*/
+
 function playGame() {
     for (let i = 0; i < 5; i++) {
         let computerChoice = getComputerChoice();
