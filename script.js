@@ -37,6 +37,10 @@ function getPlayerChoice() {
     return playerChoice;
 }
 
+// Declare score variables globally so they can be accesssed by the playRound function
+let playerScore = 0;
+let computerScore = 0;
+
 /*
 If the choices are the same, it's a draw
 
@@ -55,9 +59,11 @@ function playRound(computerChoice, playerChoice) {
     else if ((playerChoice === "rock" && computerChoice === "scissors") ||
             (playerChoice === "paper" && computerChoice === "rock") ||
             (playerChoice === "scissors" && computerChoice === "paper")) {
+                playerScore++;
                 return "Player wins.";
             }
     else {
+        computerScore++;
         return "Computer wins.";
     }
 }
@@ -67,6 +73,16 @@ function playGame() {
         let computerChoice = getComputerChoice();
         let playerChoice = getPlayerChoice();
         console.log("Player chooses " + playerChoice + " and computer chooses " + computerChoice + ". " + playRound(computerChoice, playerChoice));
+    }
+
+    if (playerScore > computerScore) {
+        console.log("Overall winner: Player");
+    }
+    else if (computerScore > playerScore) {
+        console.log("Overall winner: Computer");
+    }
+    else {
+        console.log("Overall winner: None");
     }
 }
 
