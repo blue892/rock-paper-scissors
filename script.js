@@ -72,5 +72,7 @@ function updateScreenElements(currentRound) {
 
 let selection = document.querySelector("#selection");
 selection.addEventListener("click", (e) => {
-    updateScreenElements(playRound(getComputerChoice(), e.target.value));
+    if (e.target.value) {
+        updateScreenElements(playRound(getComputerChoice(), e.target.value));
+    }
 });
